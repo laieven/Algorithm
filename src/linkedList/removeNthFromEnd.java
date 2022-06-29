@@ -6,6 +6,9 @@ package linkedList;
  * 2. 需要删除倒数指定的结点
  */
 
+/**
+ * 两种方法：正向的和逆向的
+ */
 
 public class removeNthFromEnd {
     public static void main(String[] args) {
@@ -40,4 +43,36 @@ public class removeNthFromEnd {
         p.next = q;
         return dummy.next;
     }
+    public ListNode remove2(ListNode head, int n) {
+        ListNode reverseNode = reverse(head);
+        ListNode dummy = new ListNode();
+        dummy.next = reverseNode;
+        ListNode p = dummy;
+        while(n - 1 > 0){
+            p = p.next;
+            n--;
+        }
+        p.next = p.next.next;
+        return reverse(dummy.next);
+    }
+    private ListNode reverse(ListNode head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        ListNode p = head, q = head.next, h = null;
+        while(q != null){
+            h = q.next;
+            q.next = p;
+            p = q;
+            q = h;
+        }
+        head.next = null;
+        head = p;
+        return head;
+    }
 }
+
+/**
+ * 时间复杂度:O(len)
+ * 空间复杂度:o(1)
+ */
