@@ -6,7 +6,7 @@ package linkedList;
  * 2. 合并之后也要是升序
  */
 
-public class mergeTwoLists {
+public class MergeTwoLists {
     public static void main(String[] args) {
         ListNode l11 = new ListNode(1);
         ListNode l12 = new ListNode(2);

@@ -14,7 +14,7 @@ import java.util.List;
  * 当然还可以使用栈
  */
 
-public class removeNthFromEnd {
+public class RemoveNthFromEnd {
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(2);
